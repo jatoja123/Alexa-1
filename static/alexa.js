@@ -18,10 +18,10 @@ ALEXA.addEventListener('start', function(){
 });
 
 ALEXA.addEventListener('result', function(event){
-    const text = event.results[0][0].transcript;
+    const text = event.results[0][0].transcript.toLowerCase();
     RESULT.innerHTML = text;
     CONFIDENCE.innerHTML = (event.results[0][0].confidence * 100) + '%';
-    execute(text)
+    execute(text);
 });
 
 ALEXA.addEventListener('end', function(){
